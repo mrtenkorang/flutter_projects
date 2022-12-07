@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29285330459",
+    "project_id": "safe-journey-6d91f",
+    "storage_bucket": "safe-journey-6d91f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29285330459:android:70c496474db0a9460b52be",
+        "android_client_info": {
+          "package_name": "tenkorang.com.safe_journey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29285330459-f8dub36v5bnm9tetrkefbea5i5ltdmfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBokF2jyeC6DEQ1qmrVimYft61NXyh6eEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29285330459-f8dub36v5bnm9tetrkefbea5i5ltdmfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
