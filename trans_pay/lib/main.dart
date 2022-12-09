@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trans_pay/screens/init_screen.dart';
 import 'package:trans_pay/screens/login_screen.dart';
+import 'package:trans_pay/screens/signup_screen.dart';
 
 void main() {
   runApp(const Trans());
@@ -12,7 +13,7 @@ class Trans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LoginScreen(),
+      home: SignupScreen(),
     );
   }
 }

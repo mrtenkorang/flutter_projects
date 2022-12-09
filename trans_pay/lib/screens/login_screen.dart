@@ -6,10 +6,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  static String loginId = 'login';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(249, 239, 229, 1),
+      backgroundColor: const Color.fromRGBO(249, 239, 229, 1),
       body: Column(
         children: [
           Center(
@@ -26,6 +27,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SvgPicture.asset(
                     'images/web-security.svg',
+                  ),
+                  SvgPicture.asset(
+                    'images/girlPayment.svg'
                   ),
                 ],
               ),
