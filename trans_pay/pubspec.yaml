@@ -40,6 +40,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   carousel_slider: ^4.1.1
   carousel_pro: ^1.0.0
+  font_awesome_flutter: ^10.3.0
 
 
 
