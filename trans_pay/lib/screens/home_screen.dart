@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30.0),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 20),
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
             child: Container(
               height: 80.0,
               decoration: const BoxDecoration(
@@ -93,9 +94,13 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 15.0, top: 10.0),
                       child: Column(
                         children: const [
-                          Icon(
-                            (Icons.add),
-                            color: Colors.white,
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            minRadius: 10.0,
+                            child: Icon(
+                              (Icons.add),
+                              color: Colors.black,
+                            ),
                           ),
                           Text(
                             'top-up',
@@ -132,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {  },
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 80.0, top: 10.0),
+                      padding: const EdgeInsets.only(left: 70.0, top: 10.0),
                       child: Column(
                         children: const [
                           Icon(
@@ -140,7 +145,7 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Text(
-                            'hello',
+                            'withdraw',
                             style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Montserrat'
@@ -155,9 +160,17 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20.0,),
-          Container(
-            color: const Color.fromRGBO(0, 0, 0, 1),
-            height: 160.0,
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0 ,right: 20.0),
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(255, 255, 255, 1),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0)
+                )
+              ),
+              height: 160.0,
+            ),
           ),
         ],
       ),
