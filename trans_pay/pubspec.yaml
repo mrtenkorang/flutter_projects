@@ -41,6 +41,7 @@ dependencies:
 
   carousel_pro: ^1.0.0
   fluentui_icons: ^1.0.0
+  material_design_icons_flutter: ^6.0.7096
 
 
 
