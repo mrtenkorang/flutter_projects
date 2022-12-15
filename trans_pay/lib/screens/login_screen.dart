@@ -3,6 +3,10 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/login/carousel_text.dart';
+import '../widgets/login/login_pictures.dart';
+
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -12,33 +16,12 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(249, 239, 229, 1),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
-              Center(
-                child: SizedBox(
-                  width: 350.0,
-                  height: 400.0,
-                  child: Carousel(
-                    dotSize: 5.0,
-                    dotSpacing: 15.0,
-                    dotBgColor: const Color.fromRGBO(249, 239, 229, 1),
-                    images: [
-                      SvgPicture.asset(
-                        'images/authentication.svg',
-                      ),
-                      SvgPicture.asset(
-                        'images/web-security.svg',
-                      ),
-                      SvgPicture.asset(
-                        'images/girlPayment.svg'
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              const GetLoginPictures(),
               Expanded(
                 child: Container(
                   height: 300.0,
@@ -48,77 +31,11 @@ class LoginScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
-                        child: Center(
-                          child: AnimatedTextKit(
-                            repeatForever: true,
-                            animatedTexts: [
-                              TypewriterAnimatedText(
-                                'Login',
-                                textStyle: const TextStyle(
-                                  color: Color.fromRGBO(0, 0, 0, 1),
-                                  fontSize: 50.0,
-                                  fontFamily: 'Montserrat'
-                                ),
-                              ),
-                              TypewriterAnimatedText(
-                                'to',
-                                textStyle: const TextStyle(
-                                    color: Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 50.0,
-                                  fontFamily: 'Montserrat',
-                                ),
-                              ),
-                              TypewriterAnimatedText(
-                                'trans',
-                                textStyle: const TextStyle(
-                                    color: Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 50.0,
-                                  fontFamily: 'Montserrat',
-                                ),
-                              ),
-                              TypewriterAnimatedText(
-                                'your',
-                                textStyle: const TextStyle(
-                                    color: Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 50.0,
-                                  fontFamily: 'Montserrat',
-                                ),
-                              ),
-                              TypewriterAnimatedText(
-                                'payments',
-                                textStyle: const TextStyle(
-                                    color: Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 50.0,
-                                  fontFamily: 'Montserrat',
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      const GetCarouselText(),
                       const SizedBox(
                         height: 10.0,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                        child: TextField(
-                          textAlign: TextAlign.center,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(10.0),
-                              )
-                            ),
-                            hintText: 'Email',
-                            hintStyle: TextStyle(
-                              fontFamily: 'Montserrat',
-                            )
-                          ),
-                        ),
-                      ),
+                      const GetLoginTextField(),
                       const SizedBox(
                         height: 20.0,
                       ),
@@ -172,3 +89,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
