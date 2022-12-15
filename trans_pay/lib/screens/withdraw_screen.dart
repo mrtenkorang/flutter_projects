@@ -3,14 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../widgets/send_screen_buttons.dart';
 
-class SendScreen extends StatefulWidget {
-  const SendScreen({Key? key}) : super(key: key);
+class WithdrawScreen extends StatefulWidget {
+  const WithdrawScreen({Key? key}) : super(key: key);
 
   @override
-  State<SendScreen> createState() => _SendScreenState();
+  State<WithdrawScreen> createState() => _SendScreenState();
 }
 
-class _SendScreenState extends State<SendScreen> {
+class _SendScreenState extends State<WithdrawScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class _SendScreenState extends State<SendScreen> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                    padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
                     child: Row(
                       children: [
                         Padding(
@@ -41,9 +41,9 @@ class _SendScreenState extends State<SendScreen> {
                           width: 30.0,
                         ),
                         const Text(
-                          'Send Money',
-                          style:
-                              TextStyle(fontFamily: 'Montserrat', fontSize: 25.0),
+                          'Withdraw',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat', fontSize: 25.0),
                         ),
                         const Padding(
                           padding: EdgeInsets.only(left: 110.0),
@@ -52,36 +52,15 @@ class _SendScreenState extends State<SendScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 60.0,
-                  ),
-                  Center(
-                    child: Column(
-                      children: const [
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 80.0,
-                        ),
-                        Text(
-                          'Oware',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: 'Montserrat',
-                          ),
-                        ),
-                        Text(
-                          '055 444 2223',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Montserrat',
-                            color: Color.fromRGBO(141, 145, 150, 1),
-                          ),
-                        ),
-                      ],
-                    ),
+                  SvgPicture.asset(
+                    'images/withdraw.svg',
+                    height: 250.0,
                   ),
                   const SizedBox(
                     height: 20.0,
+                  ),
+                  const SizedBox(
+                    height: 10.0,
                   ),
                   Expanded(
                     child: Container(
@@ -89,8 +68,8 @@ class _SendScreenState extends State<SendScreen> {
                       child: Column(
                         children: [
                           const Padding(
-                            padding:
-                                EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+                            padding: EdgeInsets.only(
+                                left: 20.0, right: 20.0, top: 20.0),
                             child: TextField(
                               textAlign: TextAlign.center,
                               keyboardType: TextInputType.number,
@@ -101,7 +80,7 @@ class _SendScreenState extends State<SendScreen> {
                           ),
                           const Center(
                             child: Text(
-                              'Send money to your loved ones,\n make them feel loved',
+                              'Withdraw to:\n\n1. Mobile wallet\n2. Bank',
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 20,
@@ -110,10 +89,11 @@ class _SendScreenState extends State<SendScreen> {
                             ),
                           ),
                           const SizedBox(
-                            height: 100,
+                            height: 80,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+                            padding:
+                            const EdgeInsets.only(left: 30.0, right: 30.0),
                             child: SizedBox(
                               height: 60.0,
                               width: 400.0,
@@ -122,7 +102,7 @@ class _SendScreenState extends State<SendScreen> {
                                 onPressed: () {},
                                 color: const Color.fromRGBO(0, 0, 0, 1),
                                 child: const Text(
-                                  'Send',
+                                  'Withdraw',
                                   style: TextStyle(
                                       color: Color.fromRGBO(248, 248, 248, 1),
                                       fontSize: 20.0,
