@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utilities/constants.dart';
-
-class GetLoginTextFields extends StatelessWidget {
-  const GetLoginTextFields({
+class GetSignUpTextField extends StatelessWidget {
+  const GetSignUpTextField({
     Key? key,
   }) : super(key: key);
 
@@ -29,7 +27,9 @@ class GetLoginTextFields extends StatelessWidget {
             ),
           ),
         ),
-        kLoginSizedBox,
+        SizedBox(
+          height: 40.0,
+        ),
         Padding(
           padding: EdgeInsets.only(left: 8.0, right: 8.0),
           child: TextField(
@@ -52,4 +52,5 @@ class GetLoginTextFields extends StatelessWidget {
     );
   }
 }
+
 
