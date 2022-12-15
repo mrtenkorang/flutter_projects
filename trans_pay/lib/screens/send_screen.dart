@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/send_screen_buttons.dart';
+
 class SendScreen extends StatefulWidget {
   const SendScreen({Key? key}) : super(key: key);
 
@@ -9,6 +11,14 @@ class SendScreen extends StatefulWidget {
 }
 
 class _SendScreenState extends State<SendScreen> {
+
+  final List<String> buttons = [
+    '1','2','3',
+    '4','5','6',
+    '4','8','9',
+    '.','0','⌫',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,22 +94,28 @@ class _SendScreenState extends State<SendScreen> {
                   child: Column(
                     children: [
                       const Padding(
-                        padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0),
+                        padding:
+                            EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
                         child: TextField(),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Column(
                         children: [
-                          Table(
-                            children: const [
-                              TableRow(
-                                children: [
-                                  Text('1'),
-                                  Text('2'),
-                                  Text('3'),
-                                ]
-                              )
-                            ],
+                          Expanded(
+                            child: Container(
+
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              child: Center(
+                                child: GetButton(
+                                  color: Colors.green,
+                                  buttonText: '1',
+                                  textColor: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
