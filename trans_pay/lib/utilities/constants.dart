@@ -49,7 +49,6 @@ const kSendContainerDecoration = BoxDecoration(
 
 
 //Signup screen constants
-
 const kSignUpSizedBox = SizedBox(
   height: 20.0,
 );
@@ -58,8 +57,10 @@ const kSignUpContainerDecoration = BoxDecoration(
   color: Color.fromRGBO(248, 248, 248, 1),
 );
 
-// top up screen constants
 
+
+
+// top up screen constants
 const kTopUpSizedBox = SizedBox(
   height: 40.0,
 );

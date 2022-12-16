@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utilities/constants.dart';
-import '../widgets/sign up/signup_button.dart';
 import '../widgets/sign up/signup_pictures.dart';
 import '../widgets/sign up/text_fields.dart';
 import '../widgets/sign up/texts.dart';
@@ -37,7 +36,6 @@ class SignupScreen extends StatelessWidget {
                       kSignUpSizedBox,
                       GetSignUpTextField(),
                       kSignUpSizedBox,
-                      GetSignUpButton(),
                     ],
                   ),
                 ),

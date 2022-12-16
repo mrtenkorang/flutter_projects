@@ -5,7 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utilities/constants.dart';
 import '../widgets/login/carousel_text.dart';
-import '../widgets/login/login_button.dart';
 import '../widgets/login/login_pictures.dart';
 import '../widgets/login/login_text_field.dart';
 
@@ -35,8 +34,6 @@ class LoginScreen extends StatelessWidget {
                       GetCarouselText(),
                       kLoginSizedBox,
                       GetLoginTextFields(),
-                      kLoginSizedBox,
-                      GetLoginButton(),
                     ],
                   ),
                 ),
