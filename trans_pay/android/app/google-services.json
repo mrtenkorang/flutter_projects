@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "813310456100",
+    "project_id": "transpay-8a893",
+    "storage_bucket": "transpay-8a893.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813310456100:android:bef64ff852984c1e5083b1",
+        "android_client_info": {
+          "package_name": "com.tenkorang.trans_pay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813310456100-9mmmrobh5je1iucnvluo35dr8v8bgtop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxto9RlN2Du1gfRt_2DJRrZttxFXNqhfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813310456100-9mmmrobh5je1iucnvluo35dr8v8bgtop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
