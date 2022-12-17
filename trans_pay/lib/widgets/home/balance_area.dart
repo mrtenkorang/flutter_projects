@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trans_pay/Model%20classes/providers/username.dart';
 
 class GetBalance extends StatelessWidget {
   const GetBalance({
@@ -9,8 +11,8 @@ class GetBalance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(right: 305.0),
+         const Padding(
+          padding: EdgeInsets.only(right: 250.0),
           child: Text(
             'Hi, Samantha',
             style: TextStyle(
@@ -22,14 +24,17 @@ class GetBalance extends StatelessWidget {
         ),
         Row(
           children: const [
-            Text(
-              'Your current balance',
-              style: TextStyle(
-                color: Color.fromRGBO(141, 145, 150, 1),
+            Padding(
+              padding: EdgeInsets.only(left: 25.0),
+              child: Text(
+                'Your current balance',
+                style: TextStyle(
+                  color: Color.fromRGBO(141, 145, 150, 1),
+                ),
               ),
             ),
             SizedBox(
-              width: 140.0,
+              width: 100.0,
             ),
             Text(
               'GHC 500',

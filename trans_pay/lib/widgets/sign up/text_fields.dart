@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:trans_pay/screens/home_screen.dart';
 import 'package:trans_pay/screens/login_screen.dart';
 
+import '../../Model classes/loginAndSignup/login_and_signup.dart';
+import '../../Model classes/providers/username.dart';
 import '../../utilities/constants.dart';
 
 class GetSignUpTextField extends StatefulWidget {
@@ -19,11 +21,33 @@ class _GetSignUpTextFieldState extends State<GetSignUpTextField> {
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
+  late String username;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+          child: TextField(
+            textAlign: TextAlign.center,
+            obscureText: false,
+            keyboardType: TextInputType.emailAddress,
+            decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10.0),
+                    )),
+                hintText: 'username',
+                hintStyle: TextStyle(
+                  fontFamily: 'Montserrat',
+                )),
+            onChanged: (inputValue) {
+              username = inputValue;
+            },
+          ),
+        ),
+        kSignUpSizedBox,
         Padding(
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: TextField(
@@ -82,19 +106,27 @@ class _GetSignUpTextFieldState extends State<GetSignUpTextField> {
                     fontFamily: 'Montserrat'),
               ),
               onPressed: () async {
-                try {
-                  final newUser = await _auth.createUserWithEmailAndPassword(
-                      email: email, password: password);
-                  if (!mounted) return;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                  );
-                } catch (e) {
-                  const Text('please check your credentials');
-                }
+
+                LoginAndSignUpController signup = LoginAndSignUpController
+                  (email: email, password: email);
+
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                );
+                signup.signup();
+                Navigator.pop(context);
+                if (!mounted) return;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ),
+                );
               },
             ),
           ),

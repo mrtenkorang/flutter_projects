@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
+import '../../utilities/constants.dart';
+
 class GetSignUpTexts extends StatelessWidget {
   const GetSignUpTexts({
     Key? key,
@@ -16,43 +18,23 @@ class GetSignUpTexts extends StatelessWidget {
           animatedTexts: [
             TypewriterAnimatedText(
               'Sign up',
-              textStyle: const TextStyle(
-                  color: Color.fromRGBO(0, 0, 0, 1),
-                  fontSize: 50.0,
-                  fontFamily: 'Montserrat'
-              ),
+              textStyle: kSignUpTextStyle,
             ),
             TypewriterAnimatedText(
               'to',
-              textStyle: const TextStyle(
-                color: Color.fromRGBO(0, 0, 0, 1),
-                fontSize: 50.0,
-                fontFamily: 'Montserrat',
-              ),
+              textStyle: kSignUpTextStyle,
             ),
             TypewriterAnimatedText(
               'trans',
-              textStyle: const TextStyle(
-                color: Color.fromRGBO(0, 0, 0, 1),
-                fontSize: 50.0,
-                fontFamily: 'Montserrat',
-              ),
+              textStyle: kSignUpTextStyle,
             ),
             TypewriterAnimatedText(
               'your',
-              textStyle: const TextStyle(
-                color: Color.fromRGBO(0, 0, 0, 1),
-                fontSize: 50.0,
-                fontFamily: 'Montserrat',
-              ),
+              textStyle: kSignUpTextStyle,
             ),
             TypewriterAnimatedText(
               'payments',
-              textStyle: const TextStyle(
-                color: Color.fromRGBO(0, 0, 0, 1),
-                fontSize: 50.0,
-                fontFamily: 'Montserrat',
-              ),
+              textStyle: kSignUpTextStyle,
             ),
           ],
         ),

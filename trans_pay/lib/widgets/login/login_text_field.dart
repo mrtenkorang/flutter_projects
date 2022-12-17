@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:trans_pay/screens/home_screen.dart';
 
+import '../../Model classes/loginAndSignup/login_and_signup.dart';
 import '../../utilities/constants.dart';
 
 class GetLoginTextFields extends StatefulWidget {
@@ -12,33 +15,42 @@ class GetLoginTextFields extends StatefulWidget {
 }
 
 class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
+  final _auth = FirebaseAuth.instance;
+
+  late String email;
+  late String password;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 8.0, right: 8.0),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: TextField(
             textAlign: TextAlign.center,
             obscureText: false,
-            decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                  Radius.circular(10.0),
-                )),
-                hintText: 'Email',
-                hintStyle: TextStyle(
-                  fontFamily: 'Montserrat',
-                )),
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                Radius.circular(10.0),
+              )),
+              hintText: 'Email',
+              hintStyle: TextStyle(
+                fontFamily: 'Montserrat',
+              ),
+            ),
+            onChanged: (inputValue) {
+              email = inputValue;
+            },
           ),
         ),
         kLoginSizedBox,
-        const Padding(
-          padding: EdgeInsets.only(left: 8.0, right: 8.0),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: TextField(
             textAlign: TextAlign.center,
             obscureText: true,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                 Radius.circular(10.0),
@@ -48,6 +60,9 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
                 fontFamily: 'Montserrat',
               ),
             ),
+            onChanged: (inputValue) {
+              password = inputValue;
+            },
           ),
         ),
         kLoginSizedBox,
@@ -58,7 +73,6 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
             width: 400.0,
             child: MaterialButton(
               elevation: 20.0,
-              onPressed: () {},
               color: const Color.fromRGBO(0, 0, 0, 1),
               child: const Text(
                 'Login',
@@ -67,6 +81,27 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
                     fontSize: 20.0,
                     fontFamily: 'Montserrat'),
               ),
+              onPressed: () async {
+                LoginAndSignUpController login =
+                    LoginAndSignUpController(email: email, password: password);
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                );
+                login.login();
+                Navigator.pop(context);
+                if (!mounted) return;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
+              },
             ),
           ),
         ),

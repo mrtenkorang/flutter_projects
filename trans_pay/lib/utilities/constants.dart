@@ -57,6 +57,12 @@ const kSignUpContainerDecoration = BoxDecoration(
   color: Color.fromRGBO(248, 248, 248, 1),
 );
 
+const kSignUpTextStyle =  TextStyle(
+    color: Color.fromRGBO(0, 0, 0, 1),
+    fontSize: 40.0,
+    fontFamily: 'Montserrat'
+);
+
 
 
 

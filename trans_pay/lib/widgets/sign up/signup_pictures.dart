@@ -11,7 +11,7 @@ class GetSignUpPictures extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 350.0,
-      height: 400.0,
+      height: 350.0,
       child: Carousel(
         dotSize: 5.0,
         dotSpacing: 15.0,

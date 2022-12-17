@@ -11,12 +11,13 @@ class GetInitAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       elevation: 0.10,
       backgroundColor: const Color.fromRGBO(249, 239, 229, 1),
       title: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 4.0, left: 60),
+            padding: const EdgeInsets.only(top: 4.0, left: 40),
             child: SvgPicture.asset(
               'images/online-payment.svg',
               height: 38.0,
