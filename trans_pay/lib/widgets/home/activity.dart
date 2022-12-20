@@ -25,17 +25,7 @@ class GetActivities extends StatelessWidget {
         child: Row(
           children: [
             GestureDetector(
-              onTap: () {
-                //TODO: Update to use named routes
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const TopUpScreen();
-                    },
-                  ),
-                );
-              },
+              onTap: () => Navigator.pushNamed(context, TopUpScreen.topUpId),
               child: Padding(
                 padding: const EdgeInsets.only(left: 15.0, top: 10.0),
                 child: Column(
@@ -51,25 +41,13 @@ class GetActivities extends StatelessWidget {
                     Text(
                       'top-up',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Montserrat,'),
+                          color: Colors.white, fontFamily: 'Montserrat,'),
                     )
                   ],
                 ),
               ),
             ),
             GestureDetector(
-              onTap: () {
-                //TODO: Update to use named routes
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SendScreen();
-                    },
-                  ),
-                );
-              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 70.0, top: 10.0),
                 child: Column(
@@ -81,25 +59,14 @@ class GetActivities extends StatelessWidget {
                     Text(
                       'send',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Montserrat'),
+                          color: Colors.white, fontFamily: 'Montserrat'),
                     )
                   ],
                 ),
               ),
+              onTap: () => Navigator.pushNamed(context, SendScreen.sendId),
             ),
             GestureDetector(
-              onTap: () {
-                //TODO: Update to use named routes
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const WithdrawScreen();
-                    },
-                  ),
-                );
-              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 70.0, top: 10.0),
                 child: Column(
@@ -111,12 +78,13 @@ class GetActivities extends StatelessWidget {
                     Text(
                       'withdraw',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Montserrat'),
+                          color: Colors.white, fontFamily: 'Montserrat'),
                     )
                   ],
                 ),
               ),
+              onTap: () =>
+                  Navigator.pushNamed(context, WithdrawScreen.withdrawId),
             ),
           ],
         ),
@@ -124,4 +92,3 @@ class GetActivities extends StatelessWidget {
     );
   }
 }
-

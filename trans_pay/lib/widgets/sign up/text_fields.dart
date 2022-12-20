@@ -121,12 +121,7 @@ class _GetSignUpTextFieldState extends State<GetSignUpTextField> {
                 signup.signup();
                 Navigator.pop(context);
                 if (!mounted) return;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, LoginScreen.loginId);
               },
             ),
           ),

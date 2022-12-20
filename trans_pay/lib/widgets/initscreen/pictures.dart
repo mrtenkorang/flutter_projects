@@ -1,6 +1,6 @@
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class GetPictures extends StatelessWidget {
   const GetPictures({
@@ -11,11 +11,12 @@ class GetPictures extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 300.0,
-      child: Carousel(
-        dotSize: 5.0,
-        dotSpacing: 15.0,
-        dotBgColor: const Color.fromRGBO(249, 239, 229, 1),
-        images: [
+      child: CarouselSlider(
+        options: CarouselOptions(
+          autoPlay: true,
+          height: 200
+        ),
+        items: [
           SvgPicture.asset(
             'images/discussion.svg',
             alignment: Alignment.topCenter,
@@ -31,4 +32,3 @@ class GetPictures extends StatelessWidget {
     );
   }
 }
-

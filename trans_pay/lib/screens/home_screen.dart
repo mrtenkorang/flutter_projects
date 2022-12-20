@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
 import '../widgets/home/activity.dart';
@@ -12,6 +13,8 @@ import '../widgets/home/transaction_tags.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static String homeId = '/';
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -24,18 +27,46 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: kHomeBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            GetBalance(),
+          children: [
+            const GetBalance(),
             kHomeSizedBox,
-            GetActivities(),
+            const GetActivities(),
             kHomeSizedBox,
-            GetServices(),
+            const GetServices(),
             kHomeSizedBox,
-            GetAdvertContainer(),
+            CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: true,
+                height: 145.0,
+                enlargeCenterPage: true,
+                enableInfiniteScroll: true,
+                initialPage: 0,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayInterval: const Duration(seconds: 5),
+                enlargeFactor:0.3
+              ),
+              items: const [
+                GetAdvertContainer(
+                  topInfo: '50% OFF',
+                  color: Color.fromRGBO(252, 179, 197, 1),
+                  bottomInfo: 'Pay less for every transaction',
+                ),
+                GetAdvertContainer(
+                  topInfo: '20% OFF',
+                  color: Color.fromRGBO(65, 161, 217, 1),
+                  bottomInfo: '',
+                ),
+                GetAdvertContainer(
+                  topInfo: '40% OFF',
+                  color: Color.fromRGBO(59, 183, 94, 1),
+                  bottomInfo: '',
+                ),
+              ],
+            ),
             kHomeSizedBox,
-            GetRecentTransactionTags(),
+            const GetRecentTransactionTags(),
             kHomeSizedBox,
-            GetRecentTransaction(),
+            const GetRecentTransaction(),
           ],
         ),
       ),
@@ -43,4 +74,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:trans_pay/screens/Rent/house_owner.dart';
 import 'package:trans_pay/screens/home_screen.dart';
 import 'package:trans_pay/screens/init_screen.dart';
 import 'package:trans_pay/screens/login_screen.dart';
@@ -18,12 +19,7 @@ void main() async {
   );
 
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context)=>GetUsername())
-      ],
-      child: const Trans(),
-    ),
+    const Trans(),
   );
 }
 
@@ -32,8 +28,20 @@ class Trans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomeScreen.homeId,
+
+      routes: {
+        HomeScreen.homeId: (context)=>const HomeScreen(),
+        InitScreen.initId:(context)=> const InitScreen(),
+        LoginScreen.loginId:(context)=> const LoginScreen(),
+        SignupScreen.signupId: (context)=> const SignupScreen(),
+        SendScreen.sendId: (context)=>  const SendScreen(),
+        TopUpScreen.topUpId: (context) => const TopUpScreen(),
+        WithdrawScreen.withdrawId: (context)=>const WithdrawScreen(),
+        HouseOwner.houseOwnerId: (context)=> const HouseOwner(),
+      },
     );
   }
 }

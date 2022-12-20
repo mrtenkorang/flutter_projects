@@ -11,6 +11,8 @@ import '../widgets/sendMoney/top_info.dart';
 class SendScreen extends StatefulWidget {
   const SendScreen({Key? key}) : super(key: key);
 
+  static String sendId = 'send';
+
   @override
   State<SendScreen> createState() => _SendScreenState();
 }

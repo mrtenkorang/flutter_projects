@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trans_pay/screens/Rent/house_owner.dart';
 
 class GetServices extends StatelessWidget {
   const GetServices({
@@ -86,15 +87,20 @@ class GetServices extends StatelessWidget {
                             onTap: () {
                               // TODO: take user to the internet page
                             },
-                            child: Column(
-                              children: const [
-                                Icon(Icons.add),
-                                Text(
-                                  'Rent',
-                                  style: TextStyle(
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ],
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.pushNamed(context, HouseOwner.houseOwnerId);
+                              },
+                              child: Column(
+                                children: const [
+                                  Icon(Icons.house),
+                                  Text(
+                                    'Rent',
+                                    style: TextStyle(
+                                        fontFamily: 'Montserrat'),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(

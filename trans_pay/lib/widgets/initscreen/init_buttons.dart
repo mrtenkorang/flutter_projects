@@ -20,16 +20,7 @@ class GetInitButtons extends StatelessWidget {
             height: 60.0,
             child: MaterialButton(
               elevation: 10.0,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const LoginScreen();
-                    },
-                  ),
-                );
-              },
+              onPressed: () => Navigator.pushNamed(context, LoginScreen.loginId),
               color: const Color.fromRGBO(0, 0, 0, 1),
               child: const Text(
                 'Login',
@@ -48,16 +39,7 @@ class GetInitButtons extends StatelessWidget {
             height: 60.0,
             child: MaterialButton(
               elevation: 10.0,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const SignupScreen();
-                    },
-                  ),
-                );
-              },
+              onPressed: () => Navigator.pushNamed(context, SignupScreen.signupId),
               color: const Color.fromRGBO(248, 248, 248, 1),
               child: const Text(
                 'Sign Up',

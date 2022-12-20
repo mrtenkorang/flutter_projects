@@ -1,8 +1,4 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../utilities/constants.dart';
 import '../widgets/sign up/signup_pictures.dart';
 import '../widgets/sign up/text_fields.dart';
@@ -12,6 +8,7 @@ class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
   static String signupId = 'signup';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -95,12 +95,7 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
                 login.login();
                 Navigator.pop(context);
                 if (!mounted) return;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, HomeScreen.homeId);
               },
             ),
           ),

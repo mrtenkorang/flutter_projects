@@ -11,6 +11,8 @@ import '../widgets/top up/top_up_text.dart';
 class TopUpScreen extends StatefulWidget {
   const TopUpScreen({Key? key}) : super(key: key);
 
+  static String topUpId = 'topup';
+
   @override
   State<TopUpScreen> createState() => _SendScreenState();
 }

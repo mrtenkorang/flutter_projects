@@ -10,6 +10,8 @@ import '../widgets/withdraw/withdraw_text.dart';
 class WithdrawScreen extends StatefulWidget {
   const WithdrawScreen({Key? key}) : super(key: key);
 
+  static String withdrawId = 'withdraw';
+
   @override
   State<WithdrawScreen> createState() => _SendScreenState();
 }

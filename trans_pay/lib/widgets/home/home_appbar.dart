@@ -67,12 +67,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
             onPressed: () async {
               await _auth.signOut();
               if(!mounted)return;
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const InitScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, InitScreen.initId);
             },
           ),
         ],
