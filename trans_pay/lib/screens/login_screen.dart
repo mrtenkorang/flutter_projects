@@ -26,8 +26,8 @@ class LoginScreen extends StatelessWidget {
                   decoration: kLoginContainerDecoration,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const [
-                      GetCarouselText(),
+                    children: [
+                      const GetCarouselText(),
                       kLoginSizedBox,
                       GetLoginTextFields(),
                     ],

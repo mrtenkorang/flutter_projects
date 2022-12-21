@@ -5,8 +5,8 @@ import 'package:trans_pay/screens/home_screen.dart';
 import '../../Model classes/loginAndSignup/login_and_signup.dart';
 import '../../utilities/constants.dart';
 
-class GetLoginTextFields extends StatefulWidget {
-  const GetLoginTextFields({
+class GetLoginTextFields extends StatefulWidget{
+  GetLoginTextFields({
     Key? key,
   }) : super(key: key);
 
@@ -18,6 +18,7 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
   final _auth = FirebaseAuth.instance;
 
   late String email;
+
   late String password;
 
   @override
@@ -94,7 +95,6 @@ class _GetLoginTextFieldsState extends State<GetLoginTextFields> {
                 );
                 login.login();
                 Navigator.pop(context);
-                if (!mounted) return;
                 Navigator.pushNamed(context, HomeScreen.homeId);
               },
             ),

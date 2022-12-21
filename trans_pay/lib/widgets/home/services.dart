@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trans_pay/screens/Rent/house_owner.dart';
+
+import '../../screens/Invest/invest_init_page.dart';
 
 class GetServices extends StatelessWidget {
   const GetServices({
@@ -34,8 +37,7 @@ class GetServices extends StatelessWidget {
                               Icon(Icons.add),
                               Text(
                                 'Internet',
-                                style:
-                                TextStyle(fontFamily: 'Montserrat'),
+                                style: TextStyle(fontFamily: 'Montserrat'),
                               ),
                             ],
                           ),
@@ -52,8 +54,7 @@ class GetServices extends StatelessWidget {
                               Icon(Icons.add),
                               Text(
                                 'Water',
-                                style:
-                                TextStyle(fontFamily: 'Montserrat'),
+                                style: TextStyle(fontFamily: 'Montserrat'),
                               ),
                             ],
                           ),
@@ -70,8 +71,7 @@ class GetServices extends StatelessWidget {
                               Icon(Icons.add),
                               Text(
                                 'Electricity',
-                                style:
-                                TextStyle(fontFamily: 'Montserrat'),
+                                style: TextStyle(fontFamily: 'Montserrat'),
                               ),
                             ],
                           ),
@@ -79,8 +79,7 @@ class GetServices extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding:
-                      const EdgeInsets.only(top: 30.0, left: 13.0),
+                      padding: const EdgeInsets.only(top: 30.0, left: 13.0),
                       child: Row(
                         children: [
                           GestureDetector(
@@ -88,16 +87,19 @@ class GetServices extends StatelessWidget {
                               // TODO: take user to the internet page
                             },
                             child: GestureDetector(
-                              onTap: (){
-                                Navigator.pushNamed(context, HouseOwner.houseOwnerId);
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, HouseOwner.houseOwnerId);
                               },
                               child: Column(
-                                children: const [
-                                  Icon(Icons.house),
-                                  Text(
+                                children: [
+                                  SvgPicture.asset(
+                                    'images/house.svg',
+                                    height: 40.0,
+                                  ),
+                                  const Text(
                                     'Rent',
-                                    style: TextStyle(
-                                        fontFamily: 'Montserrat'),
+                                    style: TextStyle(fontFamily: 'Montserrat'),
                                   ),
                                 ],
                               ),
@@ -109,14 +111,17 @@ class GetServices extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               //TODO: take user to the water page
+                              Navigator.pushNamed(context, InvestInitScreen.investInitId);
                             },
                             child: Column(
-                              children: const [
-                                Icon(Icons.add),
-                                Text(
+                              children: [
+                                SvgPicture.asset(
+                                  'images/investment.svg',
+                                  height: 40.0,
+                                ),
+                                const Text(
                                   'Invest',
-                                  style: TextStyle(
-                                      fontFamily: 'Montserrat'),
+                                  style: TextStyle(fontFamily: 'Montserrat'),
                                 ),
                               ],
                             ),
@@ -133,8 +138,7 @@ class GetServices extends StatelessWidget {
                                 Icon(Icons.add),
                                 Text(
                                   'More',
-                                  style: TextStyle(
-                                      fontFamily: 'Montserrat'),
+                                  style: TextStyle(fontFamily: 'Montserrat'),
                                 ),
                               ],
                             ),
@@ -152,4 +156,3 @@ class GetServices extends StatelessWidget {
     );
   }
 }
-

@@ -20,12 +20,12 @@ class _HouseOwnerState extends State<HouseOwner> {
   }
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: const Color.fromRGBO(249, 239, 229, 1),
-      body: Center(
-        child: Column(
+    return  SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color.fromRGBO(249, 239, 229, 1),
+        body: Column(
           children: const [
-            Text('Welcome to the house owner page'),
+            Center(child: Text('Welcome to the house owner page')),
           ],
         ),
       ),

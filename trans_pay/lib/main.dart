@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:trans_pay/screens/Invest/invest_init_page.dart';
 import 'package:trans_pay/screens/Rent/house_owner.dart';
 import 'package:trans_pay/screens/home_screen.dart';
 import 'package:trans_pay/screens/init_screen.dart';
@@ -9,6 +10,7 @@ import 'package:trans_pay/screens/send_screen.dart';
 import 'package:trans_pay/screens/signup_screen.dart';
 import 'package:trans_pay/screens/topup_screen.dart';
 import 'package:trans_pay/screens/withdraw_screen.dart';
+import 'package:trans_pay/widgets/login/login_text_field.dart';
 import 'Model classes/providers/username.dart';
 import 'firebase_options.dart';
 
@@ -30,7 +32,7 @@ class Trans extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.homeId,
+      initialRoute: InitScreen.initId,
 
       routes: {
         HomeScreen.homeId: (context)=>const HomeScreen(),
@@ -41,6 +43,7 @@ class Trans extends StatelessWidget {
         TopUpScreen.topUpId: (context) => const TopUpScreen(),
         WithdrawScreen.withdrawId: (context)=>const WithdrawScreen(),
         HouseOwner.houseOwnerId: (context)=> const HouseOwner(),
+        InvestInitScreen.investInitId: (context)=> const InvestInitScreen(),
       },
     );
   }
